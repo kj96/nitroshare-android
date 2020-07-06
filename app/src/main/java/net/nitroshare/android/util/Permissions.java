@@ -49,4 +49,12 @@ public class Permissions {
                 grantResuts.length > 0 &&
                 grantResuts[0] == PackageManager.PERMISSION_GRANTED;
     }
+
+    public static void getForegroundPermission(Activity activity) {
+
+        int foregroundServicePermission = 0;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
+            foregroundServicePermission = ContextCompat.checkSelfPermission(activity, Manifest.permission.FOREGROUND_SERVICE);
+        }
+    }
 }

@@ -103,6 +103,7 @@ public class TransferActivity extends AppCompatActivity
             startActivityForResult(introIntent, INTRO_REQUEST);
         } else if (!Permissions.haveStoragePermission(this)) {
             Permissions.requestStoragePermission(this);
+            Permissions.getForegroundPermission(this);
         } else {
             finishInit();
         }
